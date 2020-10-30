@@ -1,0 +1,9 @@
+body {
+  overflow: hidden;
+}
+
+img {
+  height: 100vh;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
