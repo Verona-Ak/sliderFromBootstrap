@@ -15,8 +15,8 @@ window.addEventListener('DOMContentLoaded', ()=> {
         height = '60px';
 
     function styleForArrows(l, r, w = width, h = height) {
-        l.style.cssText = `background-image: url(img/left_arrow.png); width: ${w}; height: ${h};`;
-        r.style.cssText = `background-image: url(img/right_arrow.png); width: ${w}; height: ${h};`;
+        l.style.cssText = `background-image: url(icons/left_arrow.png); width: ${w}; height: ${h};`;
+        r.style.cssText = `background-image: url(icons/right_arrow.png); width: ${w}; height: ${h};`;
     }
     styleForArrows(arrowL, arrowR);
 
@@ -25,4 +25,6 @@ window.addEventListener('DOMContentLoaded', ()=> {
         document.querySelector('.carousel-control-prev').style.width = '24%';
     }
 
+
+    
 });
