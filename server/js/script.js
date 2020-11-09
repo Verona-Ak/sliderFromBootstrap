@@ -38,6 +38,16 @@ window.addEventListener('DOMContentLoaded', ()=> {
     request.addEventListener('readystatechange', function () {
         if (request.readyState === 4 && request.status == 200) {
             arr = JSON.parse(request.response);
+            for (let j = 0; j < arr.length; j++) {
+                for (let k = 0; k < arr.length; k++) {
+                    if (arr[j].time > arr[k].time) {
+                        let l = arr[j].time;
+                        arr[j].time = arr[k].time;
+                        arr[k].time = l;
+                    }
+                }
+            }
+            console.log(arr);
             for (let i = 0; i < arr.length; i++) {
                 //Создаём carousel-item
                 let item = document.createElement('div');
@@ -52,7 +62,7 @@ window.addEventListener('DOMContentLoaded', ()=> {
                 img.classList.add("d-block");
                 img.classList.add('w-100');
                 img.alt = 'pic';
-                img.src = `img/${arr[i]}`;
+                img.src = `img/${arr[i].name}`;
                 item.appendChild(img);
 
                 // Создаём carousel-caption
@@ -72,7 +82,7 @@ window.addEventListener('DOMContentLoaded', ()=> {
             }
         }    
     });
-
+    
     
     
 
